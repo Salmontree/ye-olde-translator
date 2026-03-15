@@ -1,16 +1,18 @@
-// translate.rs — Modern English → Shakespearean English pipeline
-//
-// Pipeline stages:
-//   0. Contraction expansion  (you're → you are, don't → do not, …)
-//   1. Tokenize
-//   2. POS Tag (rule-based)
-//   3. Pronoun substitution   (you/your/yourself → thou/thee/thy/thine/thyself)
-//   4. Verb conjugation       (-s → -eth, add -est for thou)
-//   5. Irregular verb lookup
-//   6. Vocabulary substitution
-//   7. Article fix            (a/an agreement after word replacement)
-//   8. Shakespearean contractions  (it is → 'tis, …)
-//   9. Capitalisation         (sentence-start, pronoun I)
+// this is a vibe coded MESS because i really don't feel like spending all that time making this when i don't care about this project at all, good luck reading through it lol
+
+// this is a vibe coded MESS because i really don't feel like spending all that time making this when i don't care about this project at all, good luck reading through it lol
+
+// this is a vibe coded MESS because i really don't feel like spending all that time making this when i don't care about this project at all, good luck reading through it lol
+
+// this is a vibe coded MESS because i really don't feel like spending all that time making this when i don't care about this project at all, good luck reading through it lol
+
+// this is a vibe coded MESS because i really don't feel like spending all that time making this when i don't care about this project at all, good luck reading through it lol
+
+// this is a vibe coded MESS because i really don't feel like spending all that time making this when i don't care about this project at all, good luck reading through it lol
+
+// this is a vibe coded MESS because i really don't feel like spending all that time making this when i don't care about this project at all, good luck reading through it lol
+
+// this is a vibe coded MESS because i really don't feel like spending all that time making this when i don't care about this project at all, good luck reading through it lol
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 0. CONTRACTION EXPANDER
