@@ -1,6 +1,6 @@
 import { Config } from "config.slint";
 import { TextEdit, Palette, Button } from "std-widgets.slint";
-import "../assets/fonts/SpaceGrotesk-Regular.ttf";
+import "assets/fonts/SpaceGrotesk-Regular.ttf";
 
 export component Main inherits Window {
     title: "Ye Olde Translator";
@@ -40,7 +40,7 @@ export component Main inherits Window {
         height: parent.height - Config.margin*2 - Config.text-offset;
 
         font-size: Config.io-font-size;
-        // font-family: "Space Grotesk";
+        font-family: "Space Grotesk";
         placeholder-text: "Input...";
         wrap: word-wrap;
     }
@@ -51,7 +51,7 @@ export component Main inherits Window {
         height: parent.height - Config.margin*2 - Config.text-offset;
 
         font-size: Config.io-font-size;
-        // font-family: "Space Grotesk";
+        font-family: "Space Grotesk";
         placeholder-text: "Output...";
         wrap: word-wrap;
         read-only: true;
