@@ -418,6 +418,19 @@ fn vocabulary_substitution(word: &str) -> Option<String> {
     let lower = word.to_lowercase();
 
     let vocab: &[(&str, &str)] = &[
+        // non vibe-coded things lol
+        ("ur",                   "thy"),
+        ("mom",                  "mother"),
+        ("dad",                  "father"),
+        ("u're",                 "thou art"),
+        ("I have",               "I has't"),
+            
+        ("I love thee",           "I loveth thee"),
+        ("I like thee",           "I liketh thee"),
+        ("I miss thee",           "I misseth thee"),
+        ("I hate thee",           "I has't utmost misprise for thee"),
+        ("I despise thee",        "I has't utmost misprise for thee"),
+
         // ── Affirmatives / negatives ─────────────────────────────────────
         ("yes",                  "aye"),
         ("yeah",                 "aye"),
@@ -464,7 +477,6 @@ fn vocabulary_substitution(word: &str) -> Option<String> {
         ("thank you",            "grammercy"),
         ("thanks",               "grammercy"),
         ("thank",                "I thank"),
-        ("you're welcome",       "think nothing of it"),
         ("excuse me",            "I prithee pardon"),
         ("pardon me",            "I prithee pardon"),
         ("sorry",                "I am most heartily sorry"),
