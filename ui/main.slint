@@ -1,5 +1,5 @@
 import { Config } from "config.slint";
-import { TextEdit, Palette } from "std-widgets.slint";
+import { TextEdit, Palette, Button } from "std-widgets.slint";
 import "../assets/fonts/SpaceGrotesk-Regular.ttf";
 
 export component Main inherits Window {
@@ -8,20 +8,36 @@ export component Main inherits Window {
     preferred-height: 720px;
     background: Palette.background;
 
+    callback translate(input: string);
+    callback set_output_text(output: string); set_output_text(output) => {output-text.text = output}
+
+    // Translate button
+    Button {
+        width: 100px;
+        height: 40px;
+        x: parent.width/2 - self.width/2;
+        y: Config.text-offset/2 - self.height/4;
+        text: "Translate";
+
+        clicked => translate(input-text.text);
+    }
+
     // Divider
     Rectangle {
         x: parent.width/2 - 2px;
-        y: Config.margin;
+        y: Config.margin+Config.text-offset;
         width: 4px;
-        height: parent.height - Config.margin*2;
+        height: parent.height - Config.margin*2 - Config.text-offset;
         background: Palette.border;
         border-radius: Config.border-radius / 5;
     }
+
+    // I/O Text
     input-text := TextEdit {
         x: Config.margin;
-        y: Config.margin;
+        y: Config.margin+Config.text-offset;
         width: parent.width/2 - Config.margin*2;
-        height: parent.height - Config.margin*2;
+        height: parent.height - Config.margin*2 - Config.text-offset;
 
         font-size: Config.io-font-size;
         // font-family: "Space Grotesk";
@@ -30,9 +46,9 @@ export component Main inherits Window {
     }
     output-text := TextEdit {
         x: parent.width/2 + Config.margin;
-        y: Config.margin;
+        y: Config.margin+Config.text-offset;
         width: parent.width/2 - Config.margin*2;
-        height: parent.height - Config.margin*2;
+        height: parent.height - Config.margin*2 - Config.text-offset;
 
         font-size: Config.io-font-size;
         // font-family: "Space Grotesk";
