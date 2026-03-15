@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-slint = "*"
+slint = "1.15.1"
 
 [build-dependencies]
-slint-build = "*"
+slint-build = "1.15.1"

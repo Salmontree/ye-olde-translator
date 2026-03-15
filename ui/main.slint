@@ -1,32 +1,43 @@
+import { Config } from "config.slint";
+import { TextEdit, Palette } from "std-widgets.slint";
+import "../assets/fonts/SpaceGrotesk-Regular.ttf";
+
 export component Main inherits Window {
     title: "Ye Olde Translator";
     preferred-width: 1280px;
     preferred-height: 720px;
-    background: #191919;
+    background: Palette.background;
 
     // Divider
     Rectangle {
-        x: root.width/2 - 2px;
-        y: root.width / 100;
+        x: parent.width/2 - 2px;
+        y: Config.margin;
         width: 4px;
-        height: root.height - root.width/50;
-        background: #333333;
+        height: parent.height - Config.margin*2;
+        background: Palette.border;
+        border-radius: Config.border-radius / 5;
     }
+    input-text := TextEdit {
+        x: Config.margin;
+        y: Config.margin;
+        width: parent.width/2 - Config.margin*2;
+        height: parent.height - Config.margin*2;
 
-    // Input text area
-    Rectangle {
-        x: root.width / 100;
-        y: root.width / 100;
-        width: root.width/2 - root.width/50;
-        height: root.height - root.width/50;
-        background: #222222;
+        font-size: Config.io-font-size;
+        // font-family: "Space Grotesk";
+        placeholder-text: "Input...";
+        wrap: word-wrap;
     }
-    // Output text area
-    Rectangle {
-        x: root.width/2 + root.width / 100;
-        y: root.width / 100;
-        width: root.width/2 - root.width/50;
-        height: root.height - root.width/50;
-        background: #222222;
+    output-text := TextEdit {
+        x: parent.width/2 + Config.margin;
+        y: Config.margin;
+        width: parent.width/2 - Config.margin*2;
+        height: parent.height - Config.margin*2;
+
+        font-size: Config.io-font-size;
+        // font-family: "Space Grotesk";
+        placeholder-text: "Output...";
+        wrap: word-wrap;
+        read-only: true;
     }
 }
